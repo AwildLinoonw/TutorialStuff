@@ -117,6 +117,9 @@ bool HeightMapApplication::HandleStart()
 			int QuadIndex = y * m_HeightMapWidth + x;
 
 			XMFLOAT3 Vert = m_pHeightMap[QuadIndex + 1];
+			U = XMVECTOR(XMLoadFloat3(&PrevVerts[1]) - XMLoadFloat3(&PrevVerts[0]));
+			V = XMVECTOR(XMLoadFloat3(&Vert) - XMLoadFloat3(&PrevVerts[0]));
+			XMStoreFloat3(&Normal, DirectX::XMVector3Cross(U, V));
 			m_pMapVtxs[VertexCounter++] = Vertex_Pos3fColour4ubNormal3f(Vert, MAP_COLOUR, Normal);
 			PrevVerts[0] = Vert;
 
@@ -161,13 +164,13 @@ void HeightMapApplication::HandleUpdate()
 {
 	m_rotationAngle += .01f;
 
-	if(this->IsKeyPressed('Q'))
+	if(this->IsKeyPressed('W'))
 	{
 		if(m_cameraZ > 20.0f)
 			m_cameraZ -= 2.0f;
 	}
 
-	if(this->IsKeyPressed('A'))
+	if(this->IsKeyPressed('S'))
 	{
 		m_cameraZ += 2.0f;
 	}
