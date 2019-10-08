@@ -90,7 +90,7 @@ bool HeightMapApplication::HandleStart()
 		}
 	}*/
 
-	m_HeightMapVtxCount = (m_HeightMapWidth - 1) * m_HeightMapLength * 4;
+	m_HeightMapVtxCount = (m_HeightMapWidth - 1) * m_HeightMapLength * 2 + (m_HeightMapLength * 3);
 	m_pMapVtxs = new Vertex_Pos3fColour4ubNormal3f[m_HeightMapVtxCount];
 
 	XMFLOAT3 PrevVerts[2];
@@ -133,10 +133,10 @@ bool HeightMapApplication::HandleStart()
 			PrevVerts[1] = Vert;
 		}
 		int EndPoint = (y + 1) * m_HeightMapWidth;
-		m_pMapVtxs[VertexCounter++] = Vertex_Pos3fColour4ubNormal3f(PrevVerts[1], VertexColour(255, 0, 0, 0), Normal);
+		m_pMapVtxs[VertexCounter++] = Vertex_Pos3fColour4ubNormal3f(PrevVerts[1], VertexColour(255, 0, 0, 255), Normal);
 		XMFLOAT3 DEGEN = m_pHeightMap[EndPoint];
-		m_pMapVtxs[VertexCounter++] = Vertex_Pos3fColour4ubNormal3f(DEGEN, VertexColour(255, 0, 0, 0), Normal);
-		
+		m_pMapVtxs[VertexCounter++] = Vertex_Pos3fColour4ubNormal3f(DEGEN, VertexColour(255, 0, 0, 255), Normal);
+		m_pMapVtxs[VertexCounter++] = Vertex_Pos3fColour4ubNormal3f(DEGEN, VertexColour(255, 0, 0, 255), Normal);
 	}
 
 
