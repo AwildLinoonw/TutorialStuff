@@ -51,7 +51,7 @@ bool HeightMapApplication::HandleStart()
 	if(!this->CommonApp::HandleStart())
 		return false;
 
-	static const VertexColour MAP_COLOUR(200, 255, 255, 255);
+	static const VertexColour MAP_COLOUR(232, 93, 175, 255);
 
 	/*m_HeightMapVtxCount = m_HeightMapWidth * m_HeightMapLength * 6;
 	m_pMapVtxs = new Vertex_Pos3fColour4ubNormal3f[m_HeightMapVtxCount];
