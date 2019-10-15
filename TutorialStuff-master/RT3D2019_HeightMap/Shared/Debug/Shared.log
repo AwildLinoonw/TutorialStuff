@@ -1,0 +1,9 @@
+﻿  App.cpp
+  CommonApp.cpp
+  CommonFont.cpp
+c:\users\b6032792\downloads\tutorialstuff-master\rt3d2019_heightmap\shared\commonfont.cpp(108): warning C4456: declaration of 'ch' hides previous local declaration
+  c:\users\b6032792\downloads\tutorialstuff-master\rt3d2019_heightmap\shared\commonfont.cpp(99): note: see declaration of 'ch'
+  CommonMesh.cpp
+  D3DHelpers.cpp
+  Generating Code...
+  Shared.vcxproj -> C:\Users\b6032792\Downloads\TutorialStuff-master\RT3D2019_HeightMap\Debug\Shared.lib
